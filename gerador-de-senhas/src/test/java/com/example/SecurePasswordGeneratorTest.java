@@ -4,7 +4,17 @@ import com.example.generator.SecurePasswordGenerator;
 import com.example.generator.config.PasswordPolicy;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+/*
+ * Testes unitários para a classe SecurePasswordGenerator.
+ * Verificando se a senha gerada atende aos requisitos da política de senhas.
+ */
+
  class SecurePasswordGeneratorTest {
+
+    /*
+     * Testa se a senha gerada tem o comprimento correto.
+     */
     
     @Test
     void testGeneratedPasswordLenght(){
@@ -15,6 +25,10 @@ import static org.junit.jupiter.api.Assertions.*;
         System.out.println("Senha gerada: " + password);
     }
 
+    /*
+     * Testa se a senha gerada contém letras maiúsculas.
+     */
+
     @Test
     void testGeneratedPasswordContainsUppercase(){
         PasswordPolicy policy = new PasswordPolicy(12, true, false, false, false);
@@ -23,6 +37,10 @@ import static org.junit.jupiter.api.Assertions.*;
         assertTrue(password.chars().anyMatch(Character::isUpperCase), "A senha gerada deve conter letras maiúsculas.");
         System.out.println("Senha gerada: " + password);
     }
+
+    /*
+     * Testa se a senha gerada contém letras minúsculas.
+     */
 
     @Test
     void testGeneratePasswordContainsLowercase(){
@@ -33,6 +51,10 @@ import static org.junit.jupiter.api.Assertions.*;
         System.out.println("Senha gerada: " + password);
     }
 
+    /*
+     * Testa se a senha gerada contém dígitos.
+     */
+
     @Test
     void testGeneratorPasswordContainsDigits(){
         PasswordPolicy policy = new PasswordPolicy(12, false, false, true, false);
@@ -41,6 +63,10 @@ import static org.junit.jupiter.api.Assertions.*;
         assertTrue(password.chars().anyMatch(Character::isDigit), "A senha gerada deve conter ao menos um dígito.");
         System.out.println("Senha gerada: " + password);
     }
+
+    /*
+     * Testa se a senha gerada contém caracteres especiais.
+     */
 
     @Test
     void testGeneratedPasswordContainsSpecialCharacters() {
