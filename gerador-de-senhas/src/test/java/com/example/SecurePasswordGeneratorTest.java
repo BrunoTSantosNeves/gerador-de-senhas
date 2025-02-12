@@ -79,3 +79,4 @@ import static org.junit.jupiter.api.Assertions.*;
                    System.out.println("Senha gerada: " + password);
     }
 }
+
